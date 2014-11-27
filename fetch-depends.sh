@@ -11,14 +11,14 @@ fi
 
 # Fetch docker-registry.
 if [[ ! -d docker-registry/ ]]; then
-  git clone git@github.com:lyda/docker-registry.git
+  git clone https://github.com/hex108/docker-registry.git
 else
   ( cd docker-registry && git pull )
 fi
 
 # Fetch docker-registry hdfs driver.
 if [[ ! -d docker-registry-driver-hdfs/ ]]; then
-  git clone git@github.com:lyda/docker-registry-driver-hdfs.git
+  git clone https://github.com/hex108/docker-registry-driver-hdfs.git
 else
   ( cd docker-registry-driver-hdfs && git pull )
 fi

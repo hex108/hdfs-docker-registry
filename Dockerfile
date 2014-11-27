@@ -4,7 +4,11 @@ MAINTAINER Kevin Lyda <kevin@ie.suberic.net>
 RUN apt-get update
 RUN apt-get install -y default-jdk python-pip python-dev git liblzma-dev \
                        libevent1-dev libyaml-dev
+# install mysqldb or psycopg2(it is for PostgreSQL) for index
+# RUN apt-get install -y python-mysqldb
+RUN apt-get install -y python-psycopg2
 RUN pip install -e 'git+https://github.com/bwhite/hadoopy#egg=hadoopy'
+RUN pip install pika
 
 ADD hadoop-2.4.0 /opt/hadoop
 ADD etc-hadoop /opt/hadoop/etc/hadoop
